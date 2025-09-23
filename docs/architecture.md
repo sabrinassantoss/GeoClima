@@ -18,10 +18,10 @@ GECLIMAAPI
 ┃ ┣ app.py <- Endpoints da API em Flask
 ┃ ┗ services.py <- Funções de integração com APIs externas
 ┣ tests/
-┃ ┣ init.py # Inicializador de pacotes de testes
-┃ ┗ test_app.py # Testes unitários com unittest
-┣ .gitignore # Ignora arquivos temporários
-┗ README.md # Documentação principal do projeto
+┃ ┣ init.py <- Inicializador de pacotes de testes
+┃ ┗ test_app.py <- Testes unitários com unittest
+┣ .gitignore <- Ignora arquivos temporários
+┗ README.md <- Documentação principal do projeto
 
 ---
 
