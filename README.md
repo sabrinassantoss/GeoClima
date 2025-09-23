@@ -206,4 +206,4 @@ Isso facilita a execução e validação dos endpoints sem precisar rodar comand
 | Dayon Oliveira de Souza         | 2324030   | Desenvolvedor Backend (Serviços Externos) | Implementação de `services.py` (ViaCEP, Nominatim, Open-Meteo), tratamento de erros |
 | Igor Davi Vieira dos Santos     | 2326203   |  QA  | Implementação de testes unitários em `tests/test_app.py`, validação de respostas |
 | Thiago de Vasconcelos Sousa     | 2415581   | Documentação e Arquitetura     | Produção do `README.md`, criação do `docs/architecture.md`, elaboração do diagrama |
-| Sabrina dos Santos Alves        | 2326657   |           Repositório           | Organização do repositório GitHub, configuração do `.gitignore`, inclusão da coleção Postman |
+| Sabrina dos Santos Alves        | 2326657   |           DevOps / Repositório           | Organização do repositório GitHub, configuração do `.gitignore`, inclusão da coleção Postman, integração com Git, revisão de commits e versionamento, apoio na execução dos testes locais |
