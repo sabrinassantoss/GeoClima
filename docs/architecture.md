@@ -8,6 +8,7 @@ Este documento descreve a arquitetura da aplicação **GeoClima API**, detalhand
 ## Estrutura de Pastas
 A API segue a seguinte organização de diretórios:
 
+´´´text
 GECLIMAAPI
 ┣ docs/
 ┃ ┗ architecture.md # Documentação da arquitetura
@@ -21,7 +22,7 @@ GECLIMAAPI
 ┃ ┗ test_app.py # Testes unitários com unittest
 ┣ .gitignore # Ignora arquivos temporários
 ┗ README.md # Documentação principal do projeto
-
+´´´
 ---
 
 ## Componentes e Responsabilidades
