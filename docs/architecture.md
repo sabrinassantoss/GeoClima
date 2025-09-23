@@ -8,20 +8,21 @@ Este documento descreve a arquitetura da aplicação **GeoClima API**, detalhand
 ## Estrutura de Pastas
 A API segue a seguinte organização de diretórios:
 
+```text
 GECLIMAAPI
 ┣ docs/
-┃ ┗ architecture.md # Documentação da arquitetura
+┃ ┗ architecture.md <- Documentação da arquitetura
 ┣ postman/
-┃ ┗ GeoClima.postman_collection.json # Coleção Postman exportada
+┃ ┗ GeoClima.postman_collection.json <- Coleção Postman exportada
 ┣ src/
-┃ ┣ app.py # Endpoints da API em Flask
-┃ ┗ services.py # Funções de integração com APIs externas
+┃ ┣ app.py <- Endpoints da API em Flask
+┃ ┗ services.py <- Funções de integração com APIs externas
 ┣ tests/
-┃ ┣ init.py # Inicializador de pacotes de testes
-┃ ┗ test_app.py # Testes unitários com unittest
-┣ .gitignore # Ignora arquivos temporários
-┗ README.md # Documentação principal do projeto
-
+┃ ┣ init.py <- Inicializador de pacotes de testes
+┃ ┗ test_app.py <- Testes unitários com unittest
+┣ .gitignore <- Ignora arquivos temporários
+┗ README.md <- Documentação principal do projeto
+```
 ---
 
 ## Componentes e Responsabilidades

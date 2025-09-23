@@ -197,3 +197,13 @@ postman/GeoClima.postman_collection.json
    em vez de escrever a URL completa toda vez.  
 
 Isso facilita a execução e validação dos endpoints sem precisar rodar comandos manualmente.
+
+## Equipe e Papéis
+| Integrante                      | Matrícula | Papel                          | Atividades principais |
+|---------------------------------|-----------|--------------------------------|------------------------|
+| Abrahão Levy Barbosa de Lavor   | 2323796   | Product Owner (PO)             | Gestão do escopo, priorização de entregas |
+| Carlos Filipe Madeira de Souza  | 2317449   | Desenvolvedor Backend (Endpoints) | Implementação de `app.py` (/endereco, /coordenadas, /temperatura) |
+| Dayon Oliveira de Souza         | 2324030   | Desenvolvedor Backend (Serviços Externos) | Implementação de `services.py` (ViaCEP, Nominatim, Open-Meteo), tratamento de erros |
+| Igor Davi Vieira dos Santos     | 2326203   |  QA  | Implementação de testes unitários em `tests/test_app.py`, validação de respostas |
+| Thiago de Vasconcelos Sousa     | 2415581   | Documentação e Arquitetura     | Produção do `README.md`, criação do `docs/architecture.md`, elaboração do diagrama |
+| Sabrina dos Santos Alves        | 2326657   |           Repositório           | Organização do repositório GitHub, configuração do `.gitignore`, inclusão da coleção Postman |
