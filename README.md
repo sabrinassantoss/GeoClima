@@ -35,7 +35,7 @@ GEOCLIMAAPI
 
 O diagrama abaixo ilustra os principais componentes da API e sua interação com os serviços externos:
 
-![Diagrama da Arquitetura](GeoClima_Arquitetura.png)
+![Diagrama da Arquitetura](docs/GeoClima_Arquitetura.png)
 
 ### Fluxo de funcionamento
 1. O usuário deve informar um CEP.  
