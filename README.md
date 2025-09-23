@@ -1,7 +1,9 @@
 # GeoClima API
 
 ## Objetivo do Projeto
-O objetivo desta API é integrar sistemas externos para oferecer informações completas sobre endereço, coordenadas geográficas e temperatura atual, a partir de um CEP informado pelo usuário.
+O objetivo da GeoClima API é integrar múltiplos serviços externos para fornecer, a partir de um CEP informado pelo usuário:
+o endereço correspondente, as coordenadas geográficas (latitude e longitude), e a temperatura atual da localidade.
+Essa API simplifica o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/Nominatim e Open-Meteo), reunsindo tudo em um só ponto de consulta.
 
 ## Tecnologias Utilizadas
 - **Linguagem:** Python 3.x  
