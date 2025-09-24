@@ -56,15 +56,26 @@ GeoClimaAPI/
 
 ---
 
-## Fluxo de Funcionamento
-1. O cliente (usuário, Postman ou outra aplicação) faz uma requisição HTTP para a API.  
-2. O Flask (`app.py`) recebe a requisição.  
-3. O `app.py` chama funções de `services.py`.  
-4. O `services.py` consulta as APIs externas:  
-   - ViaCEP → retorna endereço.  
-   - Nominatim → retorna coordenadas.  
-   - Open-Meteo → retorna temperatura.  
-5. A resposta é estruturada em JSON e devolvida ao cliente.  
+### Fluxo de Funcionamento
+
+```mermaid
+graph LR
+    A[Cliente] --> B[GeoClima API]
+    B --> C[ViaCEP]
+    C --> D[Endereço]
+    D --> E[Nominatim]
+    E --> F[Coordenadas]
+    F --> G[Open-Meteo]
+    G --> H[Temperatura]
+    H --> B
+    B --> A
+```
+
+1. **Entrada:** Cliente informa um CEP válido
+2. **Consulta de Endereço:** API consulta o ViaCEP e obtém o endereço completo
+3. **Geocodificação:** Endereço é enviado ao Nominatim para obter latitude e longitude
+4. **Dados Climáticos:** Coordenadas são utilizadas no Open-Meteo para obter temperatura atual
+5. **Resposta:** Dados consolidados são retornados ao cliente em formato JSON
 
 ---
 
