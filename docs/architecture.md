@@ -22,7 +22,7 @@ GECLIMAAPI
 ┃ ┗ test_app.py <- Testes unitários com unittest
 ┣ .gitignore <- Ignora arquivos temporários
 ┗ README.md <- Documentação principal do projeto
-
+```
 ---
 
 ## Componentes e Responsabilidades
