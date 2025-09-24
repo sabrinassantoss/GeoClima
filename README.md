@@ -20,6 +20,7 @@
 - [Contribuindo](#contribuindo)
 - [Licença](#licenca)
 
+<a id="sobre-o-projeto"></a>
 ## 📖 Sobre o Projeto
 
 A **GeoClima API** é uma aplicação RESTful que integra múltiplos serviços externos para fornecer informações completas sobre localização e clima a partir de um CEP brasileiro. Com apenas uma consulta, você obtém endereço completo, coordenadas geográficas e temperatura atual da localidade.
