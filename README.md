@@ -4,14 +4,14 @@
 [![Flask](https://img.shields.io/badge/flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Índice
+## 📋 Índice
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Arquitetura](#arquitetura)
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
+- [Pré-requisitos](#pre-requisitos)
+- [Instalação](#instalacao)
 - [Como Executar](#como-executar)
 - [Endpoints da API](#endpoints-da-api)
 - [Testes](#testes)
@@ -20,17 +20,16 @@
 - [Contribuindo](#contribuindo)
 - [Licença](#licenca)
 
-
-
-## Sobre o Projeto
+## 📖 Sobre o Projeto
 
 A **GeoClima API** é uma aplicação RESTful que integra múltiplos serviços externos para fornecer informações completas sobre localização e clima a partir de um CEP brasileiro. Com apenas uma consulta, você obtém endereço completo, coordenadas geográficas e temperatura atual da localidade.
 
-### Objetivo
+### 🎯 Objetivo
 
 Simplificar o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/Nominatim e Open-Meteo), reunindo tudo em um único ponto de consulta, facilitando o desenvolvimento de aplicações que necessitem dessas informações integradas.
 
-## Funcionalidades
+<a id="funcionalidades"></a>
+## ✨ Funcionalidades
 
 - ✅ Consulta de endereço completo por CEP
 - ✅ Obtenção de coordenadas geográficas (latitude/longitude)
@@ -39,7 +38,8 @@ Simplificar o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/
 - ✅ Tratamento de erros robusto
 - ✅ Respostas em formato JSON
 
-## Tecnologias Utilizadas
+<a id="tecnologias-utilizadas"></a>
+## 🚀 Tecnologias Utilizadas
 
 ### Core
 - **Linguagem:** Python 3.x
@@ -57,7 +57,8 @@ Simplificar o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/
 - **Framework de Testes:** Unittest (nativo do Python)
 - **Documentação de API:** Postman Collection
 
-## Arquitetura
+<a id="arquitetura"></a>
+## 🏗️ Arquitetura
 
 ### Estrutura de Diretórios
 
@@ -88,7 +89,7 @@ GeoClimaAPI/
 
 ![Diagrama da Arquitetura](docs/GeoClima_Arquitetura.png)
 
-### Fluxo de Funcionamento
+### 🔄 Fluxo de Funcionamento
 
 ```mermaid
 graph LR
@@ -109,7 +110,8 @@ graph LR
 4. **Dados Climáticos:** Coordenadas são utilizadas no Open-Meteo para obter temperatura atual
 5. **Resposta:** Dados consolidados são retornados ao cliente em formato JSON
 
-## Pré-requisitos
+<a id="pre-requisitos"></a>
+## 📦 Pré-requisitos
 
 Antes de começar, verifique se você atende aos seguintes requisitos:
 
@@ -118,7 +120,8 @@ Antes de começar, verifique se você atende aos seguintes requisitos:
 - Git para clonar o repositório
 - Conexão com a internet (para acessar APIs externas)
 
-## Instalação
+<a id="instalacao"></a>
+## 🔧 Instalação
 
 ### 1. Clone o repositório
 
@@ -151,7 +154,8 @@ Flask==3.0.0
 requests==2.31.0
 ```
 
-## Como Executar
+<a id="como-executar"></a>
+## ▶️ Como Executar
 
 ### Executando a API
 
@@ -182,7 +186,8 @@ if __name__ == '__main__':
     app.run(debug=False, host='0.0.0.0')
 ```
 
-## Endpoints da API
+<a id="endpoints-da-api"></a>
+## 📍 Endpoints da API
 
 ### 1. Consultar Endereço por CEP
 
@@ -278,7 +283,8 @@ curl http://127.0.0.1:5000/temperatura/60811-905
 | 404 | CEP não encontrado |
 | 500 | Erro interno do servidor |
 
-## Testes
+<a id="testes"></a>
+## 🧪 Testes
 
 ### Executando os testes unitários
 
@@ -313,7 +319,8 @@ coverage run -m unittest discover -s tests
 coverage report -m
 ```
 
-## Documentação Postman
+<a id="documentacao-postman"></a>
+## 📮 Documentação Postman
 
 Uma coleção completa do Postman está disponível em:
 ```
@@ -336,7 +343,8 @@ postman/GeoClima.postman_collection.json
 - ✅ GET Temperatura por CEP
 - ✅ Testes com CEPs inválidos
 
-## Equipe de Desenvolvimento
+<a id="equipe-de-desenvolvimento"></a>
+## 👥 Equipe de Desenvolvimento
 
 | Nome | Matrícula | Papel | Responsabilidades |
 |------|-----------|-------|------------------|
@@ -347,7 +355,8 @@ postman/GeoClima.postman_collection.json
 | **Thiago de Vasconcelos Sousa** | 2415581 | Arquiteto de Software | Documentação técnica, diagramas de arquitetura, padrões de projeto |
 | **Sabrina dos Santos Alves** | 2326657 | DevOps Engineer | Gestão do repositório, CI/CD, versionamento, deployment |
 
-## Contribuindo
+<a id="contribuindo"></a>
+## 🤝 Contribuindo
 
 Contribuições são sempre bem-vindas! Para contribuir:
 
@@ -364,9 +373,10 @@ Contribuições são sempre bem-vindas! Para contribuir:
 - Atualize a documentação conforme necessário
 - Mantenha as mensagens de commit claras e descritivas
 
-## Licença
+<a id="licenca"></a>
+## 📄 Licença
 
-Este projeto está sob a licença MIT.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
