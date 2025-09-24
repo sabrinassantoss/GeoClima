@@ -356,33 +356,8 @@ postman/GeoClima.postman_collection.json
 | **Thiago de Vasconcelos Sousa** | 2415581 | Arquiteto de Software | Documentação técnica, diagramas de arquitetura, padrões de projeto |
 | **Sabrina dos Santos Alves** | 2326657 | DevOps Engineer | Gestão do repositório, CI/CD, versionamento, deployment |
 
-<a id="contribuindo"></a>
-## 🤝 Contribuindo
-
-Contribuições são sempre bem-vindas! Para contribuir:
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-### Diretrizes de Contribuição
-
-- Siga o padrão PEP 8 para código Python
-- Adicione testes para novas funcionalidades
-- Atualize a documentação conforme necessário
-- Mantenha as mensagens de commit claras e descritivas
-
-<a id="licenca"></a>
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
----
-
 <div align="center">
-  <p>Desenvolvido com ❤️ pela equipe GeoClima</p>
+  <p>Desenvolvido pela equipe GeoClima</p>
   <p>Universidade de Fortaleza - UNIFOR</p>
-  <p>2024</p>
+  <p>2025</p>
 </div>
