@@ -4,7 +4,7 @@
 [![Flask](https://img.shields.io/badge/flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## 📋 Índice
+## Índice
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
@@ -21,26 +21,26 @@
 - [Licença](#licenca)
 
 <a id="sobre-o-projeto"></a>
-## 📖 Sobre o Projeto
+## Sobre o Projeto
 
 A **GeoClima API** é uma aplicação RESTful que integra múltiplos serviços externos para fornecer informações completas sobre localização e clima a partir de um CEP brasileiro. Com apenas uma consulta, você obtém endereço completo, coordenadas geográficas e temperatura atual da localidade.
 
-### 🎯 Objetivo
+### Objetivo
 
 Simplificar o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/Nominatim e Open-Meteo), reunindo tudo em um único ponto de consulta, facilitando o desenvolvimento de aplicações que necessitem dessas informações integradas.
 
 <a id="funcionalidades"></a>
-## ✨ Funcionalidades
+## Funcionalidades
 
-- ✅ Consulta de endereço completo por CEP
-- ✅ Obtenção de coordenadas geográficas (latitude/longitude)
-- ✅ Consulta de temperatura atual da localidade
-- ✅ Integração com múltiplas APIs externas
-- ✅ Tratamento de erros robusto
-- ✅ Respostas em formato JSON
+- Consulta de endereço completo por CEP
+- Obtenção de coordenadas geográficas (latitude/longitude)
+- Consulta de temperatura atual da localidade
+- Integração com múltiplas APIs externas
+- Tratamento de erros robusto
+- Respostas em formato JSON
 
 <a id="tecnologias-utilizadas"></a>
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 ### Core
 - **Linguagem:** Python 3.x
@@ -59,7 +59,7 @@ Simplificar o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/
 - **Documentação de API:** Postman Collection
 
 <a id="arquitetura"></a>
-## 🏗️ Arquitetura
+## Arquitetura
 
 ### Estrutura de Diretórios
 
@@ -90,7 +90,7 @@ GeoClimaAPI/
 
 ![Diagrama da Arquitetura](docs/GeoClima_Arquitetura.png)
 
-### 🔄 Fluxo de Funcionamento
+### Fluxo de Funcionamento
 
 ```mermaid
 graph LR
@@ -112,7 +112,7 @@ graph LR
 5. **Resposta:** Dados consolidados são retornados ao cliente em formato JSON
 
 <a id="pre-requisitos"></a>
-## 📦 Pré-requisitos
+## Pré-requisitos
 
 Antes de começar, verifique se você atende aos seguintes requisitos:
 
@@ -122,7 +122,7 @@ Antes de começar, verifique se você atende aos seguintes requisitos:
 - Conexão com a internet (para acessar APIs externas)
 
 <a id="instalacao"></a>
-## 🔧 Instalação
+## Instalação
 
 ### 1. Clone o repositório
 
@@ -156,7 +156,7 @@ requests==2.31.0
 ```
 
 <a id="como-executar"></a>
-## ▶️ Como Executar
+## Como Executar
 
 ### Executando a API
 
@@ -188,7 +188,7 @@ if __name__ == '__main__':
 ```
 
 <a id="endpoints-da-api"></a>
-## 📍 Endpoints da API
+## Endpoints da API
 
 ### 1. Consultar Endereço por CEP
 
@@ -285,7 +285,7 @@ curl http://127.0.0.1:5000/temperatura/60811-905
 | 500 | Erro interno do servidor |
 
 <a id="testes"></a>
-## 🧪 Testes
+## Testes
 
 ### Executando os testes unitários
 
@@ -321,7 +321,7 @@ coverage report -m
 ```
 
 <a id="documentacao-postman"></a>
-## 📮 Documentação Postman
+## Documentação Postman
 
 Uma coleção completa do Postman está disponível em:
 ```
@@ -339,13 +339,13 @@ postman/GeoClima.postman_collection.json
    - Todas as rotas estarão pré-configuradas e prontas para uso
 
 ### Requisições disponíveis na coleção:
-- ✅ GET Endereço por CEP
-- ✅ GET Coordenadas por CEP
-- ✅ GET Temperatura por CEP
-- ✅ Testes com CEPs inválidos
+- GET Endereço por CEP
+- GET Coordenadas por CEP
+- GET Temperatura por CEP
+- Testes com CEPs inválidos
 
 <a id="equipe-de-desenvolvimento"></a>
-## 👥 Equipe de Desenvolvimento
+## Equipe de Desenvolvimento
 
 | Nome | Matrícula | Papel | Responsabilidades |
 |------|-----------|-------|------------------|
