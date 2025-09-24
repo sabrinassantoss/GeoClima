@@ -1,4 +1,4 @@
-# GeoClima API 🌡️🗺️
+# GeoClima API
 
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
