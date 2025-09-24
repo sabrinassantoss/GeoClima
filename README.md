@@ -1,106 +1,202 @@
-# GeoClima API
+# GeoClima API 🌡️🗺️
 
-## Objetivo do Projeto
-O objetivo da GeoClima API é integrar múltiplos serviços externos para fornecer, a partir de um CEP informado pelo usuário:
-o endereço correspondente, as coordenadas geográficas (latitude e longitude), e a temperatura atual da localidade.
-Essa API simplifica o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/Nominatim e Open-Meteo), reunsindo tudo em um só ponto de consulta.
+[![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/flask-3.0.0-green.svg)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Tecnologias Utilizadas
-- **Linguagem:** Python 3.x  
-- **Framework:** Flask  
-- **Bibliotecas:** Requests, Unittest  
-- **APIs externas integradas:**
-  - [ViaCEP](https://viacep.com.br/) → consulta de endereços por CEP  
-  - [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/) → conversão de endereço em coordenadas geográficas  
-  - [Open-Meteo](https://open-meteo.com/) → obtenção da temperatura atual  
+## 📋 Índice
 
-## Arquitetura da API
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Arquitetura](#arquitetura)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Como Executar](#como-executar)
+- [Endpoints da API](#endpoints-da-api)
+- [Testes](#testes)
+- [Documentação Postman](#documentação-postman)
+- [Equipe de Desenvolvimento](#equipe-de-desenvolvimento)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
 
-A API segue a seguinte arquitetura de pastas:
-```text
-GEOCLIMAAPI
-┣ docs/
-┃ ┗ architecture.md
-┣ postman/
-┃ ┗ GeoClima.postman_collection.json
-┣ src/
-┃ ┣ app.py
-┃ ┗ services.py
-┣ tests/
-┃ ┣ init.py
-┃ ┗ test_app.py
-┣ .gitignore
+## 📖 Sobre o Projeto
+
+A **GeoClima API** é uma aplicação RESTful que integra múltiplos serviços externos para fornecer informações completas sobre localização e clima a partir de um CEP brasileiro. Com apenas uma consulta, você obtém endereço completo, coordenadas geográficas e temperatura atual da localidade.
+
+### 🎯 Objetivo
+
+Simplificar o acesso a múltiplas fontes de informação (ViaCEP, OpenStreetMap/Nominatim e Open-Meteo), reunindo tudo em um único ponto de consulta, facilitando o desenvolvimento de aplicações que necessitem dessas informações integradas.
+
+## ✨ Funcionalidades
+
+- ✅ Consulta de endereço completo por CEP
+- ✅ Obtenção de coordenadas geográficas (latitude/longitude)
+- ✅ Consulta de temperatura atual da localidade
+- ✅ Integração com múltiplas APIs externas
+- ✅ Tratamento de erros robusto
+- ✅ Respostas em formato JSON
+
+## 🚀 Tecnologias Utilizadas
+
+### Core
+- **Linguagem:** Python 3.x
+- **Framework:** Flask 3.0.0
+- **Cliente HTTP:** Requests 2.31.0
+
+### APIs Externas Integradas
+| Serviço | Descrição | Documentação |
+|---------|-----------|--------------|
+| [ViaCEP](https://viacep.com.br/) | Consulta de endereços por CEP | [Docs](https://viacep.com.br/) |
+| [OpenStreetMap Nominatim](https://nominatim.openstreetmap.org/) | Conversão de endereço em coordenadas | [Docs](https://nominatim.org/release-docs/latest/) |
+| [Open-Meteo](https://open-meteo.com/) | Dados meteorológicos em tempo real | [Docs](https://open-meteo.com/en/docs) |
+
+### Testes e Documentação
+- **Framework de Testes:** Unittest (nativo do Python)
+- **Documentação de API:** Postman Collection
+
+## 🏗️ Arquitetura
+
+### Estrutura de Diretórios
+
 ```
-## Diagrama de Arquitetura
+GeoClimaAPI/
+│
+├── docs/                       # Documentação do projeto
+│   ├── architecture.md         # Detalhes da arquitetura
+│   └── GeoClima_Arquitetura.png # Diagrama visual
+│
+├── postman/                    # Coleções para testes
+│   └── GeoClima.postman_collection.json
+│
+├── src/                        # Código fonte
+│   ├── app.py                  # Aplicação Flask e rotas
+│   └── services.py             # Serviços de integração
+│
+├── tests/                      # Testes automatizados
+│   ├── __init__.py
+│   └── test_app.py             # Testes unitários
+│
+├── .gitignore                  # Arquivos ignorados pelo Git
+├── README.md                   # Este arquivo
+└── requirements.txt            # Dependências do projeto
+```
 
-O diagrama abaixo ilustra os principais componentes da API e sua interação com os serviços externos:
+### Diagrama de Arquitetura
 
 ![Diagrama da Arquitetura](docs/GeoClima_Arquitetura.png)
 
-### Fluxo de funcionamento
-1. O usuário deve informar um CEP.  
-2. A API consulta o ViaCEP e retorna o endereço.  
-3. O endereço é enviado ao Nominatim (OpenStreetMap) para obter **latitude e longitude**.  
-4. As coordenadas são utilizadas no Open-Meteo para obter a temperatura atual.  
+### 🔄 Fluxo de Funcionamento
 
----
-
-## Instalação de Dependências
-
-Antes de executar o projeto, instale as dependências:
-
-```bash
-pip install flask requests
+```mermaid
+graph LR
+    A[Cliente] --> B[GeoClima API]
+    B --> C[ViaCEP]
+    C --> D[Endereço]
+    D --> E[Nominatim]
+    E --> F[Coordenadas]
+    F --> G[Open-Meteo]
+    G --> H[Temperatura]
+    H --> B
+    B --> A
 ```
-Essas bibliotecas são responsáveis por:
-Flask: criação dos endpoints da API
-Requests: consumo das APIs externas (ViaCEP, OpenStreetMap, Open-Meteo)
-Unittest: já incluso no Python, utilizado para testes automatizados
 
-Como Executar o Projeto
-1. Clonar o repositório
+1. **Entrada:** Cliente informa um CEP válido
+2. **Consulta de Endereço:** API consulta o ViaCEP e obtém o endereço completo
+3. **Geocodificação:** Endereço é enviado ao Nominatim para obter latitude e longitude
+4. **Dados Climáticos:** Coordenadas são utilizadas no Open-Meteo para obter temperatura atual
+5. **Resposta:** Dados consolidados são retornados ao cliente em formato JSON
+
+## 📦 Pré-requisitos
+
+Antes de começar, verifique se você atende aos seguintes requisitos:
+
+- Python 3.8 ou superior instalado
+- pip (gerenciador de pacotes do Python)
+- Git para clonar o repositório
+- Conexão com a internet (para acessar APIs externas)
+
+## 🔧 Instalação
+
+### 1. Clone o repositório
+
 ```bash
 git clone https://github.com/sabrinassantoss/GeoClima.git
+cd GeoClima
 ```
+
+### 2. Crie um ambiente virtual (recomendado)
+
 ```bash
-cd geoclima
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
 ```
-2. Executar a API
+
+### 3. Instale as dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+O arquivo `requirements.txt` contém:
+```txt
+Flask==3.0.0
+requests==2.31.0
+```
+
+## ▶️ Como Executar
+
+### Executando a API
+
 ```bash
 cd src
 python app.py
 ```
-3. Acessar a API
 
-Por padrão, a API rodará em:
-```http
-http://127.0.0.1:5000
-```
-Observação sobre a porta:
-O Flask utiliza a porta 5000 por padrão.
-Se a porta já estiver em uso no seu computador, será necessário alterar manualmente a porta no arquivo app.py, por exemplo:
+A API estará disponível em: `http://127.0.0.1:5000`
+
+### Configurações Alternativas
+
+#### Alterando a porta (se necessário)
+
+Se a porta 5000 estiver em uso, modifique em `app.py`:
+
 ```python
-app.run(port=5001)
+if __name__ == '__main__':
+    app.run(debug=True, port=5001)  # Altere para a porta desejada
 ```
-Nesse caso, a API estaria disponível em:
-```cpp
-http://127.0.0.1:5001
+
+#### Modo de produção
+
+Para executar em modo de produção, desative o modo debug:
+
+```python
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0')
 ```
-Em ambientes de hospedagem (ex: Render, Heroku, AWS), o endereço e a porta podem variar conforme a configuração do servidor.
 
-## Endpoints da API
-1. Consultar Endereço por CEP
+## 📍 Endpoints da API
 
-Rota:
+### 1. Consultar Endereço por CEP
 
+Retorna o endereço completo para o CEP informado.
+
+**Request:**
 ```http
 GET /endereco/<cep>
 ```
-Exemplo de requisição:
-```http
-/endereco/60811-905
+
+**Exemplo:**
+```bash
+curl http://127.0.0.1:5000/endereco/60811-905
 ```
-Resposta:
+
+**Response (200 OK):**
 ```json
 {
     "bairro": "Edson Queiroz",
@@ -118,38 +214,44 @@ Resposta:
     "unidade": "Fundação Edson Queiroz Universidade de Fortaleza - UNIFOR"
 }
 ```
-2. Consultar Coordenadas por CEP
 
-Rota:
+### 2. Consultar Coordenadas por CEP
 
+Retorna as coordenadas geográficas (latitude e longitude) do CEP.
+
+**Request:**
 ```http
 GET /coordenadas/<cep>
 ```
-Exemplo de requisição:
 
-```http
-/coordenadas/60811-905
+**Exemplo:**
+```bash
+curl http://127.0.0.1:5000/coordenadas/60811-905
 ```
-Resposta:
 
+**Response (200 OK):**
 ```json
 {
     "latitude": -3.7578681,
     "longitude": -38.4878028
 }
 ```
-3. Consultar temperatura por CEP
 
-Rota:
+### 3. Consultar Temperatura por CEP
 
+Retorna informações completas incluindo endereço, coordenadas e temperatura atual.
+
+**Request:**
 ```http
 GET /temperatura/<cep>
 ```
-Exemplo de requisição:
-```http
-/temperatura/60811-905
+
+**Exemplo:**
+```bash
+curl http://127.0.0.1:5000/temperatura/60811-905
 ```
-Resposta:
+
+**Response (200 OK):**
 ```json
 {
     "bairro": "Edson Queiroz",
@@ -164,46 +266,110 @@ Resposta:
     "temperatura": 29.5
 }
 ```
-## Testes Automatizados
-Os testes unitários foram implementados em tests/test_app.py utilizando unittest.
 
-Para executar os testes:
+### Códigos de Status HTTP
+
+| Código | Descrição |
+|--------|-----------|
+| 200 | Requisição bem-sucedida |
+| 400 | CEP inválido ou mal formatado |
+| 404 | CEP não encontrado |
+| 500 | Erro interno do servidor |
+
+## 🧪 Testes
+
+### Executando os testes unitários
+
 ```bash
+# Na raiz do projeto
 python -m unittest discover -s tests
+
+# Com verbose para mais detalhes
+python -m unittest discover -s tests -v
 ```
-Exemplo de saída esperada:
+
+### Exemplo de saída esperada:
+
 ```bash
-...
+test_endereco_endpoint (test_app.TestGeoClimaAPI) ... ok
+test_coordenadas_endpoint (test_app.TestGeoClimaAPI) ... ok
+test_temperatura_endpoint (test_app.TestGeoClimaAPI) ... ok
+
 ----------------------------------------------------------------------
 Ran 3 tests in 2.543s
 
 OK
 ```
-## Postman
-O repositório contém uma coleção do Postman em:
+
+### Cobertura de testes
+
+Para gerar relatório de cobertura:
+
 ```bash
+pip install coverage
+coverage run -m unittest discover -s tests
+coverage report -m
+```
+
+## 📮 Documentação Postman
+
+Uma coleção completa do Postman está disponível em:
+```
 postman/GeoClima.postman_collection.json
 ```
-### Como usar:
-1. Abra o Postman.  
-2. Clique em **Import** → selecione o arquivo `GeoClima.postman_collection.json`.  
-3. A coleção será adicionada com todas as requisições configuradas.  
-4. Configure uma variável de ambiente chamada **`base_url`**:  
-   - Valor: `http://127.0.0.1:5000`  
-   - Assim, você poderá usar requisições como:  
-     ```
-     {{base_url}}/endereco/60534170
-     ```
-   em vez de escrever a URL completa toda vez.  
 
-Isso facilita a execução e validação dos endpoints sem precisar rodar comandos manualmente.
+### Como importar e usar:
 
-## Equipe e Papéis
-| Integrante                      | Matrícula | Papel                          | Atividades principais |
-|---------------------------------|-----------|--------------------------------|------------------------|
-| Abrahão Levy Barbosa de Lavor   | 2323796   | Product Owner (PO)             | Gestão do escopo, priorização de entregas |
-| Carlos Filipe Madeira de Souza  | 2317449   | Desenvolvedor Backend (Endpoints) | Implementação de `app.py` (/endereco, /coordenadas, /temperatura) |
-| Dayon Oliveira de Souza         | 2324030   | Desenvolvedor Backend (Serviços Externos) | Implementação de `services.py` (ViaCEP, Nominatim, Open-Meteo), tratamento de erros |
-| Igor Davi Vieira dos Santos     | 2326203   |  QA  | Implementação de testes unitários em `tests/test_app.py`, validação de respostas |
-| Thiago de Vasconcelos Sousa     | 2415581   | Documentação e Arquitetura     | Produção do `README.md`, criação do `docs/architecture.md`, elaboração do diagrama |
-| Sabrina dos Santos Alves        | 2326657   |           DevOps / Repositório           | Organização do repositório GitHub, configuração do `.gitignore`, inclusão da coleção Postman, integração com Git, revisão de commits e versionamento, apoio na execução dos testes locais |
+1. **Abra o Postman**
+2. **Importe a coleção:**
+   - Clique em `Import` → Selecione o arquivo `GeoClima.postman_collection.json`
+3. **Configure o ambiente:**
+   - Crie uma variável de ambiente `base_url` com valor `http://127.0.0.1:5000`
+4. **Execute as requisições:**
+   - Todas as rotas estarão pré-configuradas e prontas para uso
+
+### Requisições disponíveis na coleção:
+- ✅ GET Endereço por CEP
+- ✅ GET Coordenadas por CEP
+- ✅ GET Temperatura por CEP
+- ✅ Testes com CEPs inválidos
+
+## 👥 Equipe de Desenvolvimento
+
+| Nome | Matrícula | Papel | Responsabilidades |
+|------|-----------|-------|------------------|
+| **Abrahão Levy Barbosa de Lavor** | 2323796 | Product Owner (PO) | Gestão do escopo, priorização de entregas, comunicação com stakeholders |
+| **Carlos Filipe Madeira de Souza** | 2317449 | Desenvolvedor Backend | Implementação dos endpoints em `app.py`, rotas REST |
+| **Dayon Oliveira de Souza** | 2324030 | Desenvolvedor Backend | Integração com APIs externas em `services.py`, tratamento de erros |
+| **Igor Davi Vieira dos Santos** | 2326203 | QA Engineer | Testes unitários, validação de respostas, garantia de qualidade |
+| **Thiago de Vasconcelos Sousa** | 2415581 | Arquiteto de Software | Documentação técnica, diagramas de arquitetura, padrões de projeto |
+| **Sabrina dos Santos Alves** | 2326657 | DevOps Engineer | Gestão do repositório, CI/CD, versionamento, deployment |
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Para contribuir:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+### Diretrizes de Contribuição
+
+- Siga o padrão PEP 8 para código Python
+- Adicione testes para novas funcionalidades
+- Atualize a documentação conforme necessário
+- Mantenha as mensagens de commit claras e descritivas
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ pela equipe GeoClima</p>
+  <p>Universidade de Fortaleza - UNIFOR</p>
+  <p>2024</p>
+</div>
