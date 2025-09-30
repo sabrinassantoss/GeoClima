@@ -351,7 +351,7 @@ postman/GeoClima.postman_collection.json
 |------|-----------|-------|------------------|
 | **Abrahão Levy Barbosa de Lavor** | 2323796 | Product Owner (PO) | Gestão do escopo, priorização de entregas, comunicação com stakeholders |
 | **Carlos Filipe Madeira de Souza** | 2317449 | Desenvolvedor Backend | Implementação dos endpoints em `app.py`, rotas REST |
-| **Dayon Oliveira de Souza** | 2324030 | Desenvolvedor Backend | Integração com APIs externas em `services.py`, tratamento de erros |
+| **Dayon Oliveira de Souza** | 2425030 | Desenvolvedor Backend | Integração com APIs externas em `services.py`, tratamento de erros |
 | **Igor Davi Vieira dos Santos** | 2326203 | QA Engineer | Testes unitários, validação de respostas, garantia de qualidade |
 | **Thiago de Vasconcelos Sousa** | 2415581 | Arquiteto de Software | Documentação técnica, diagramas de arquitetura, padrões de projeto |
 | **Sabrina dos Santos Alves** | 2326657 | DevOps Engineer | Gestão do repositório, CI/CD, versionamento, deployment |
